@@ -1,24 +1,14 @@
 using System;
 using ToDoList;
-namespace ToDoList
+namespace ToDoList.Models
 {
-  public class ToDoList
+  public class Item
   {
-    public void CheckToDoList(string string1)
+    public string Description { get; }
+
+    public Item(string description)
     {
-      string reversedString;
-      char[] charArray = string1.ToCharArray();
-      Array.Reverse(charArray);
-      reversedString = new string(charArray);
-      bool isToDoList = string1.Equals(reversedString, StringComparison.OrdinalIgnoreCase);
-      if (isToDoList == true)
-      {
-        Console.WriteLine(string1 + " is a ToDoList.");
-      }
-      else
-      {
-        Console.WriteLine(string1 + " is not a ToDoList.");
-      }
+      Description = description;
     }
   }
 }
